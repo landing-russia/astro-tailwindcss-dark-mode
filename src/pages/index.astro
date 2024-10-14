@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+---
+
+<Layout title="Welcome to Astro">
+  <main
+    class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <div class="container mx-auto px-4 py-8">
+      <div class="flex justify-end mb-4">
+        <ThemeToggle />
+      </div>
+      <h1 class="text-4xl font-bold text-center mb-8">
+        Welcome to <span class="text-gradient">Astro</span>
+      </h1>
+      <p class="text-center mb-8">
+        To get started, open the directory <code
+          class="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">src/pages</code
+        > in your project.<br />
+        <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+      </p>
+      <ul role="list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card
+          href="https://docs.astro.build/"
+          title="Documentation"
+          body="Learn how Astro works and explore the official API docs."
+        />
+        <Card
+          href="https://astro.build/integrations/"
+          title="Integrations"
+          body="Supercharge your project with new frameworks and libraries."
+        />
+        <Card
+          href="https://astro.build/themes/"
+          title="Themes"
+          body="Explore a galaxy of community-built starter themes."
+        />
+        <Card
+          href="https://astro.build/chat/"
+          title="Community"
+          body="Come say hi to our amazing Discord community. ❤️"
+        />
+      </ul>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>
